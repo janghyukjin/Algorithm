@@ -1,0 +1,21 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        if x==0:
+            return 0
+        ans = ""
+        target = str(x)
+        if target[0] == "-":
+            length = len(target)-1
+            ans+='-'
+        else:
+            length = len(target)
+        back = len(target)-1
+        for i in range(length):
+            if target[back-i]=="0":
+                if ans =="-" or ans=="":
+                    continue
+            ans += target[back-i]
+        if int(ans) not in range(-2**31,2**31): #Overflow 
+            return 0
+        return ans
+        
