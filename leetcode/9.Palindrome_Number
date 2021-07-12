@@ -1,0 +1,14 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if str(x)[0] == '-':
+            return False
+        target = str(x)
+        length = len(target)//2
+        tail = len(target)
+        for i in range(length):
+            if target[i]==target[tail-1-i]:
+                continue
+            else:
+                return False
+        return True
+            
